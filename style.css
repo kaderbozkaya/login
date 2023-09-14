@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Londrina+Shadow&family=PT+Sans&family=Poppins:wght@200;300;400;500;600;700&family=Quicksand:wght@400;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+
+input,
+button {
+    font-size: 1rem;
+    border: none;
+    outline: none;
+
+}
+
+button,
+.header {
+    color: #05b2fc;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+
+}
+
+.login_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login_form {
+    border-radius: 1rem;
+    width: 400px;
+    position: relative;
+    background-color: hsla(0, 0%, 10%, .3);
+    border: 2px solid white;
+    margin-inline: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    backdrop-filter: blur(8px);
+
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 5rem;
+
+}
+
+.login_content {
+    display: grid;
+    row-gap: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.login_box {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: .75rem;
+    border-bottom: 2px solid white;
+}
+
+.input_icon,
+.password_eye {
+    font-size: 1.5rem;
+}
+
+.login_input {
+    width: 100%;
+    padding-block: .8rem;
+    background: none;
+    color: white;
+    position: relative;
+
+}
+
+.input_part {
+    position: relative;
+}
+
+.login_label {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    font-weight: 500;
+    transition: top .3s, font-size .3s;
+    /*click on email or password move label up transition */
+
+}
+
+.password_eye {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    z-index: 10;
+    cursor: pointer;
+
+}
+
+/* put a padding on the right so that the password does not overlap the password_eye icon */
+.login_box:nth-child(2) input {
+    padding-right: 1.8rem;
+}
+
+.check_input,
+.check_forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.check_forgot {
+    font-size: .9rem;
+    margin-bottom: 1.5rem;
+    column-gap: .5rem;
+
+}
+
+.forgot_pass,
+.register {
+    color: #73b0cb;
+    font-weight: 500;
+}
+
+.forgot_pass:hover,
+.register:hover {
+    text-decoration: underline;
+}
+
+.login_button {
+    width: 100%;
+    font-weight: 600;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.no_account {
+    text-align: center;
+}
+
+/* input focus move label up */
+.login_input:focus+.login_label {
+    top: -12px;
+    font-size: 16px;
+}
+
+/* input focus move label down */
+input:not(:placeholder-shown).login_input:not(:focus)+.login_label {
+    top: -12px;
+    font-size: 16px;
+}
+
+
+/*------------ responsive--------------- */
+
+@media screen and (max-width: 320px) {
+    .login_form {
+        width: 280px;
+        justify-content: center;
+    }
+
+    .header {
+        font-size: 1.5rem;
+    }
+
+    .forgot_pass,
+    .login_label,
+    .no_account,
+    .login_input,
+    .remember_me {
+        font-size: .5rem;
+    }
+}
+
+@media screen and (min-width: 375px) {
+
+    .login_form {
+        width: 330px;
+        justify-content: center;
+    }
+
+    .header {
+        font-size: 1.75rem;
+    }
+
+    .forgot_pass,
+    .register,
+    .no_account {
+        font-size: .75rem;
+    }
+}
+
+@media screen and (min-width: 425px) {
+
+    .login_form {
+        width: 370px;
+        justify-content: center;
+    }
+
+    .header {
+        font-size: 2rem;
+    }
+
+    .forgot_pass,
+    .register,
+    label,
+    .no_account {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        justify-content: center;
+    }
+
+    .login_form {
+        width: 432px;
+        padding: 4rem 3rem 3.5rem;
+    }
+
+}
